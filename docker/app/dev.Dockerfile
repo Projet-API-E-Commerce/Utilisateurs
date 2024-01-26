@@ -1,4 +1,4 @@
-FROM node:latest as production
+FROM node:latest as develepment
 
 LABEL author.lastname="OTUSZEWSKI" \
         author.firstname="Hugo" \
@@ -13,7 +13,7 @@ RUN echo "Europe/Paris" > /etc/timezone && \
 WORKDIR /home/app
 COPY ../../app /home/app/
 
-ENV NODE_ENV=production
+ENV NODE_ENV=develepment
 
 RUN npm install && \
     npm install -g nodemon

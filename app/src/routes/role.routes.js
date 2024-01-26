@@ -1,8 +1,10 @@
 // NOTE - Imports
 import { Router } from "express";
 import RoleController from "../controllers/role.controller.js";
+import { authenticateToken } from "../middlewares/jwtAuthentication.middleware.js";
 
 const roleRouter = Router();
+// roleRouter.use(authenticateToken);
 
 // NOTE - Routes
 roleRouter.post("/roles", RoleController.createRole);

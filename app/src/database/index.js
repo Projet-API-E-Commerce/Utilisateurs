@@ -45,12 +45,13 @@ class Database {
 		Object.values(models).forEach((model) => {
 			model.init(this.sequelize);
 		});
+
+		await this.sequelize.sync();
+
 		Object.values(models)
 			.filter((model) => typeof model.associate === "function")
 			.forEach((model) => model.associate(models));
 		Role.createDefaultRoles();
-
-		this.sequelize.sync({ force: true });
 	}
 }
 

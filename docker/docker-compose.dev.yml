@@ -6,9 +6,9 @@ services:
     restart: unless-stopped
     build:
       context: ../
-      dockerfile: docker/app/prod.Dockerfile
+      dockerfile: docker/app/dev.Dockerfile
     environment:
-      - APP_ENV=prod
+      - APP_ENV=dev
       - LANG=fr_FR.UTF-8
       - PORT=3000
     env_file:
