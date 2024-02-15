@@ -27,6 +27,13 @@ class Database {
 					dialect: DATABASE_DIALECT,
 					port: DATABASE_PORT,
 					host: DATABASE_HOST,
+					ssl: true,
+					dialectOptions: {
+						ssl: {
+							require: true,
+							rejectUnauthorized: false,
+						},
+					},
 					synchronize: DATABASE_SYNCHRONIZE,
 					define: {
 						timestamps: false,

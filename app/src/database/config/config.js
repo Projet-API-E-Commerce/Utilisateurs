@@ -10,6 +10,11 @@ export default {
 		database: process.env.DATABASE_NAME,
 		dialect: process.env.DATABASE_DIALECT,
 		synchronize: process.env.SYNCHRONIZE,
+		native: true,
+		ssl: true,
+		dialectOptions: {
+			ssl: true,
+		},
 	},
 	production: {
 		schema: process.env.DATABASE_SCHEMA,
@@ -20,5 +25,10 @@ export default {
 		database: process.env.DATABASE_NAME,
 		dialect: process.env.DATABASE_DIALECT,
 		synchronize: process.env.SYNCHRONIZE,
+		native: true,
+		ssl: true,
+		dialectOptions: {
+			ssl: true,
+		},
 	},
 };
